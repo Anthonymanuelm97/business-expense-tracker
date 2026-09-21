@@ -50,6 +50,7 @@ while True:
     print("\nMenu:")
     print("0. Exit")
     print("1. View all expenses")
+    print("2. Add a new expense")
     choice = input("Choose an option: ")
 
     if choice == "0":
@@ -57,3 +58,8 @@ while True:
         break
     elif choice == "1":
         view_expenses(business_expenses)
+    elif choice == "2":
+        description = input("Enter expense description: ")
+        amount = float(input("Enter expense amount: "))
+        category = input("Enter expense category: ")
+        add_expense(business_expenses, description, amount, category)
