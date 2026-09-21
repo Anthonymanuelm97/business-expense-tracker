@@ -15,8 +15,33 @@ def view_expenses(expenses):
         print(f"Description: {expense['description']}, Amount: ${expense['amount']:.2f}, Category: {expense['category']}")
 
 
+def search_by_category(expenses, target_category):
+    target_category_lower = target_category.lower()
+    matching_expenses = []
+
+    for expense in expenses:
+        if expense["category"].lower() == target_category_lower:
+            matching_expenses.append(expense)
+
+    return matching_expenses
+
+
+def total_by_category(expenses, target_category):
+    target_category_lower = target_category.lower()
+    total = 0
+
+    for expense in expenses:
+        if expense["category"].lower() == target_category_lower:
+            total += expense["amount"]
+
+    return total
+
+
 view_expenses(business_expenses)
 
 add_expense(business_expenses, "Website hosting", 200.00, "IT Services")
 
 view_expenses(business_expenses)
+
+print(search_by_category(business_expenses, "FOOD"))
+print(total_by_category(business_expenses, "FOOD"))
