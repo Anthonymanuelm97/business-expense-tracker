@@ -45,3 +45,12 @@ view_expenses(business_expenses)
 
 print(search_by_category(business_expenses, "FOOD"))
 print(total_by_category(business_expenses, "FOOD"))
+
+while True:
+    print("\nMenu:")
+    print("0. Exit")
+    choice = input("Choose an option: ")
+
+    if choice == "0":
+        print("Goodbye!")
+        break
