@@ -49,8 +49,11 @@ print(total_by_category(business_expenses, "FOOD"))
 while True:
     print("\nMenu:")
     print("0. Exit")
+    print("1. View all expenses")
     choice = input("Choose an option: ")
 
     if choice == "0":
         print("Goodbye!")
         break
+    elif choice == "1":
+        view_expenses(business_expenses)
