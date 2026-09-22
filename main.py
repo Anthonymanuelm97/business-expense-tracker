@@ -51,6 +51,7 @@ while True:
     print("0. Exit")
     print("1. View all expenses")
     print("2. Add a new expense")
+    print("3. Search expenses by category")
     choice = input("Choose an option: ")
 
     if choice == "0":
@@ -60,6 +61,11 @@ while True:
         view_expenses(business_expenses)
     elif choice == "2":
         description = input("Enter expense description: ")
-        amount = float(input("Enter expense amount: "))
+        amount = input("Enter expense amount: ")
         category = input("Enter expense category: ")
         add_expense(business_expenses, description, amount, category)
+    elif choice == "3":
+        category = input("Enter the category to search for: ")
+        matching_expenses = search_by_category(business_expenses, category)
+        for expense in matching_expenses:
+            print(f"Description: {expense['description']}, Amount: ${expense['amount']:.2f}")
