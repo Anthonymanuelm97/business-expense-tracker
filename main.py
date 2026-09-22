@@ -52,6 +52,7 @@ while True:
     print("1. View all expenses")
     print("2. Add a new expense")
     print("3. Search expenses by category")
+    print("4. View total spent in a category")
     choice = input("Choose an option: ")
 
     if choice == "0":
@@ -69,3 +70,8 @@ while True:
         matching_expenses = search_by_category(business_expenses, category)
         for expense in matching_expenses:
             print(f"Description: {expense['description']}, Amount: ${expense['amount']:.2f}")
+    elif choice == "4":
+        category = input("Enter the category to total: ")
+        total = total_by_category(business_expenses, category)
+        print(f"Total spent in {category}: ${total:.2f}")
+
